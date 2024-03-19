@@ -82,4 +82,5 @@ class cogvlm_model():
 
                 return response
 
-
+hus = cogvlm_model()
+hus.CogVLM_inference('/mnt/nfs/hushuai.p/GAI_fastapi/upload/man.png','what\'s this')

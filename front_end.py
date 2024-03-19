@@ -30,7 +30,7 @@ def resnet_inference(img_path,topk_result):
 def cogvlm_inference(img_path, question):
     task_id = upload_img(img_path)
     url = f'http://0.0.0.0:8000/cogvlm?task_id={task_id}&question={question}'
-    response = requests.post(url)
+    response = requests.get(url)
     print(response.status_code)
     print(response.json())
 

@@ -82,7 +82,7 @@ async def resnet_inference(task_id: str, topk_result: int,):
                     detail = f'{task_id} task not found'
                )
 
-@app.post('/cogvlm')
+@app.get('/cogvlm')
 async def cogvlm_inference(task_id: str, question: str, cogvlm_model: cogvlm_model = Depends(get_cogvlm_model)):
     for file_extension in legal_extensions:
         local_file_path = f'./upload/{task_id}.{file_extension}'
