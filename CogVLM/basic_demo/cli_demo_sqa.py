@@ -82,5 +82,11 @@ class cogvlm_model():
 
                 return response
 
-hus = cogvlm_model()
-hus.CogVLM_inference('/mnt/nfs/hushuai.p/GAI_fastapi/upload/man.png','what\'s this')
+if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--img_path', type=str, help='image path for what you need predict')
+    parser.add_argument('--question', type=str)
+    args = parser.parse_args()
+    hus = cogvlm_model()
+    hus.CogVLM_inference(args.img_path, args.question)

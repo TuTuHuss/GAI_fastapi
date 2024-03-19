@@ -45,4 +45,10 @@ def predict_class(img_path,topk):
         predicted_result += f"{i}. Class: {class_name[-1]}, Probability: {probability:.2f}\n"
     return predicted_result
 
-
+if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--img_path', type=str, help='image path for what you need predict')
+    parser.add_argument('--top_k',type=int, default=3)
+    args = parser.parse_args()
+    print(predict_class(args.img_path,args.top_k))
